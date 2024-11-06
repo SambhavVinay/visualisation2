@@ -1,4 +1,3 @@
-﻿#Edit the 8th to 12th line code before upload to gihub
 # Import necessary libraries
 import streamlit as st
 import seaborn as sns
@@ -11,10 +10,10 @@ st.title("Interactive Visualizations with Plotly and Streamlit")
 
 
 # --- Input for Author Information ---
-st.sidebar.header("Visualization skill workshop - Plotly")
-name = st.sidebar.text_input("Samarth Maganahally")
-usn = st.sidebar.text_input("08")
-instructor_name = st.sidebar.text_input("Ashwini")
+st.sidebar.header("Visualization Skill Workshop - Plotly")
+name = st.sidebar.text_input("Enter your name")
+usn = st.sidebar.text_input("Enter your USN")
+instructor_name = st.sidebar.text_input("Enter Instructor's Name")
 
 
 # Display author information if provided
@@ -49,25 +48,25 @@ st.plotly_chart(fig2)  # Display the chart in Streamlit
 
 
 fig4 = px.scatter(tips, x='total_bill', y='tip', color='sex',
-title='Total Bill vs Tip (Colored by Gender)',
-labels={'total_bill': 'Total Bill ($)', 'tip': 'Tip ($)'},
-template='plotly_dark', # Using a cool dark theme
-size='size' # The size of points based on the size of the group
+                  title='Total Bill vs Tip (Colored by Gender)',
+                  labels={'total_bill': 'Total Bill ($)', 'tip': 'Tip ($)'},
+                  template='plotly_dark',  # Using a cool dark theme
+                  size='size'  # The size of points based on the size of the group
 )
 st.plotly_chart(fig4)
 
 fig5 = px.box(
-tips, x='day', y='total_bill', color='time',
-title='Total Bill Distribution by Day and Time',
-labels={'total_bill': 'Total Bill ($)', 'day': 'Day'},
-template='ggplot2', # Classic theme for a beautiful look
+    tips, x='day', y='total_bill', color='time',
+    title='Total Bill Distribution by Day and Time',
+    labels={'total_bill': 'Total Bill ($)', 'day': 'Day'},
+    template='ggplot2',  # Classic theme for a beautiful look
 )
 st.plotly_chart(fig5)
 
 fig6 = px.histogram(
-tips, x='tip', color='sex',
-title='Distribution of Tips (Colored by Gender)',
-labels={'tip': 'Tip ($)', 'sex': 'Gender'},
-template='plotly_white', # Clean and bright look
+    tips, x='tip', color='sex',
+    title='Distribution of Tips (Colored by Gender)',
+    labels={'tip': 'Tip ($)', 'sex': 'Gender'},
+    template='plotly_white',  # Clean and bright look
 )
 st.plotly_chart(fig6)
